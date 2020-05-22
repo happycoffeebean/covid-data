@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -36,7 +35,9 @@ $json = json_decode($result, true);
 
 $table = "hernando";
 
-$confirmed = $json['confirmed'];
+$confirmed = $json['confirmed'];  
+
+echo $confirmed; exit;  
 
 if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
