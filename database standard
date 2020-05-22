@@ -10,20 +10,12 @@ try {
     logfile($error->getMessage());
   }
   
-// This query is used when joining array keys to values
-$sql = sprintf(
-  "INSERT INTO %s (%s) values (%s)", 
-  "$table",
-  implode(", ", array_keys($ret)), 
-  ":" . implode(", :", array_keys($ret))
-);
-    
-    
 //  This is simplified
 
 $sql = sprintf(
   "INSERT INTO %s (%s) values (%s)", 
-  "$table", "confirmed", $json['location']['latest']['confirmed']
+  "$table", "confirmed", "$json['location']['latest']['confirmed']"
+  );
 
 try { 
   $statement = $connection->prepare($sql);
