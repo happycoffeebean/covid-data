@@ -17,11 +17,11 @@ try {
     logfile($error->getMessage());
   }
 
-$sql = $connection->query("SELECT * FROM covid.hernando")->fetchAll();
+$sql = $connection->query("select max(id), confirmed, deaths from covid.hernando")->fetchAll();
 
 foreach ($sql as $row) {
-    //echo $row['confirmed']."<br>";
-    //echo $row['deaths']."<br>";
+    echo $row['confirmed']."<br>";
+    echo $row['deaths']."<br>";
     
 }
 
